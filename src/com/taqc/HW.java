@@ -13,12 +13,13 @@ public class HW {
         float x = input.nextFloat();
         float y = input.nextFloat();
         if ((a <= x & b <= y) & (b <= x & a <= y) &
-            (a <= x & c <= y) & (c <= x & a <= y) &
-            (c <= x & b <= y) & (b <= x & c <= y))
+                (a <= x & c <= y) & (c <= x & a <= y) &
+                (c <= x & b <= y) & (b <= x & c <= y))
             System.out.println("The brick goes through the hole");
         else
             System.out.println("The brick does not go through\n");
     }
+
     public static void task2() {
         Scanner in = new Scanner(System.in);
         System.out.print("Input n: ");
@@ -52,11 +53,11 @@ public class HW {
             reverse_n = (reverse_n * 10) + tmp;
             c_n = c_n / 10;
         } while (c_n > 0);
-        System.out.println("Reverse number: " +reverse_n);
+        System.out.println("Reverse number: " + reverse_n);
 
         System.out.println("\n2.3.");
 
-        int  begin, middle = 0, pos = 1;
+        int begin, middle = 0, pos = 1;
         c_n = n;
         begin = c_n % 10;
         c_n = c_n / 10;
@@ -80,6 +81,7 @@ public class HW {
         result = first_1 + n * 10 + 1;
         System.out.println("Digit \"1\" included:  " + result + "\n");
     }
+
     public static void task3() {
         Scanner input = new Scanner(System.in);
         System.out.println("Task 3.1.\nEnter radius: ");
@@ -102,15 +104,16 @@ public class HW {
         int total2 = t2 * c2;
         int total3 = t3 * c3;
         int all = total1 + total2 + total3;
-        long endTime1   = System.nanoTime();
+        long endTime1 = System.nanoTime();
         System.out.println(("Result:\nTotal cost c1: " + total1 + "$,\nTotal cost c2: " + total2 + "$,\nTotal cost c3: " + total3 + "$.\nTotal cost: " + all + "$. Took time separately: " + (endTime1 - startTime1) + "ns"));
         long startTime2 = System.nanoTime();
         int total = t1 * c1 + t2 * c2 + t3 * c3;
-        long endTime2   = System.nanoTime();
+        long endTime2 = System.nanoTime();
         System.out.println(("Result:\nTotal cost: " + total + "$.\nTook time together: " + (endTime2 - startTime2) + "ns"));
     }
+
     public static void task4() {
-        Person person1=new Person();
+        Person person1 = new Person();
         person1.Input();
         person1.output();
         person1.Age();
@@ -118,7 +121,7 @@ public class HW {
         person1.output();
         System.out.print("\n");
 
-        Person person2=new Person();
+        Person person2 = new Person();
         person2.Input();
         person2.output();
         person2.Age();
@@ -126,7 +129,7 @@ public class HW {
         person2.output();
         System.out.print("\n");
 
-        Person person3=new Person();
+        Person person3 = new Person();
         person3.Input();
         person3.output();
         person3.Age();
@@ -135,7 +138,7 @@ public class HW {
         System.out.print("\n");
 
 
-        Person person4=new Person();
+        Person person4 = new Person();
         person4.Input();
         person4.output();
         person4.Age();
@@ -143,7 +146,7 @@ public class HW {
         person4.output();
         System.out.print("\n");
 
-        Person person5=new Person();
+        Person person5 = new Person();
         person5.Input();
         person5.output();
         person5.Age();
@@ -151,6 +154,7 @@ public class HW {
         person5.output();
 
     }
+
     public static void task5() {
         Scanner input = new Scanner(System.in);
         Fifth func = new Fifth();
@@ -174,8 +178,8 @@ public class HW {
         for (int i = 0; i < size; i++) {
             array[i] = input.nextInt();
         }
-        System.out.println("Maximum value in the array is: "+ func.max(array));
-        System.out.println("Minimum value in the array is: "+ func.min(array));
+        System.out.println("Maximum value in the array is: " + func.max(array));
+        System.out.println("Minimum value in the array is: " + func.min(array));
 
         System.out.print("\nTask 5.1.3\nInput code (400-405): ");
         int code = input.nextInt();
@@ -220,6 +224,7 @@ public class HW {
             dog3.output();
         }
     }
+
     public static void task6() {
         new User("Vitaliy", 35, Sex.MALE);
         new User("Masha", 34, Sex.FEMALE);
@@ -254,33 +259,39 @@ class Person {
     private int year;
     private final int curDate = Calendar.getInstance().get(Calendar.YEAR);
 
-    Person(){}
-    Person(String name,int birthYear){
-        this.name=name;
-        this.year =birthYear;
+    Person() {
     }
 
-    void Age(){
+    Person(String name, int birthYear) {
+        this.name = name;
+        this.year = birthYear;
+    }
+
+    void Age() {
         System.out.println("Age: ");
         System.out.println(curDate - this.year);
     }
-    void Input(){
+
+    void Input() {
         System.out.print("Enter Name: ");
-        Scanner sc =new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         name = sc.nextLine();
         System.out.print("Enter birthYear: ");
         year = sc.nextInt();
 
     }
-    void output(){
-        System.out.println("Name:"+ name +" birthYear: " + year);
+
+    void output() {
+        System.out.println("Name:" + name + " birthYear: " + year);
     }
-    void ChangeName(){
+
+    void ChangeName() {
         System.out.print("Change Name: ");
-        Scanner sc =new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         name = sc.nextLine();
     }
-    public  String getName() {
+
+    public String getName() {
         return name;
     }
 
@@ -298,6 +309,7 @@ class Person {
 
 
 }
+
 class Fifth {
     public boolean rangeCompare(float num) {
         if ((num >= -5 && num <= 5)) {
@@ -330,14 +342,16 @@ class Fifth {
         }
         return min;
     }
-        public void HTTPError (final int code) {
-            HTTPError[] errors = HTTPError.values();
-            for (HTTPError er : errors) {
-                if (code == er.getCode())
-                    System.out.println(er);
-            }
+
+    public void HTTPError(final int code) {
+        HTTPError[] errors = HTTPError.values();
+        for (HTTPError er : errors) {
+            if (code == er.getCode())
+                System.out.println(er);
         }
+    }
 }
+
 enum HTTPError {
     Bad_Request(400), Unauthorized(401), Payment_Required(402), Forbidden(403), Not_Found(404), Method_Not_Allowed(405);
 
@@ -351,6 +365,7 @@ enum HTTPError {
         return code;
     }
 }
+
 class Dog {
     private String name;
     private Breeds breed;
@@ -396,6 +411,7 @@ class Dog {
         System.out.println("Age: " + this.age);
     }
 }
+
 enum Breeds {
     AKITA,
     POODLE,

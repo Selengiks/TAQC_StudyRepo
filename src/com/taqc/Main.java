@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        while(true) {
+        while (true) {
             System.out.println("Choose a task: \n 1-6 or 0 to exit");
             String c = input.next();
             switch (c) {
